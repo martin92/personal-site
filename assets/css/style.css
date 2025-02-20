@@ -63,7 +63,7 @@ body {
 
 .line-1{
   position: relative;  
-  width: 17.5em;
+  width: 18em;
   margin: 0 auto;
   border-right: 2px solid rgba(255,255,255,.75);
   font-size: 3rem;
@@ -80,7 +80,7 @@ animation: typewriter 4s steps(44) 1s 1 normal both,
 }
 @keyframes typewriter{
 from{width: 0;}
-to{width: 17.5em;}
+to{width: 18em;}
 }
 @keyframes blinkTextCursor{
 from{border-right-color: rgba(255,255,255,.75);}
