@@ -23,7 +23,7 @@ body {
   display: inline-block;
   width: 100px;
   text-align: center;
-  padding: 20px 10px
+  padding: 20px 0px;
 }
 
 .nav-link {
@@ -42,18 +42,54 @@ body {
 
 #intro {
   display: flex;
-  /*justify-content: center;
-  align-items: center;*/
-  font-size: 2em;
+  flex-direction: column;
+  font-size: 3rem;
   font-family: "Josefin Sans", sans-serif;
   height: 100vh;
 }
 
 .intro-content {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:azure;
+  height: 100%;
 }
 
+.intro-content-name {
+  color:#5633EE;
+  font-weight: bold;
+}
 
+.line-1{
+  position: relative;  
+  width: 17.5em;
+  margin: 0 auto;
+  border-right: 2px solid rgba(255,255,255,.75);
+  font-size: 3rem;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);    
+}
+
+/* Animation */
+.anim-typewriter{
+animation: typewriter 4s steps(44) 1s 1 normal both,
+           blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter{
+from{width: 0;}
+to{width: 17.5em;}
+}
+@keyframes blinkTextCursor{
+from{border-right-color: rgba(255,255,255,.75);}
+to{border-right-color: transparent;}
+}
+
+/**/
+
+/* ---------------------- ABOUT ME -----------------------*/
 #about-me {
   display: flex;
   width: 100%;
