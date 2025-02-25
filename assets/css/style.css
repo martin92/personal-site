@@ -6,6 +6,7 @@ body {
   margin: 0 !important;
 }
 
+/* -------------- BARRA DE NAVEGACION -----------------*/
 .nav {
   height: 60px;
   width: 100%;
@@ -39,7 +40,7 @@ body {
   opacity: 0.5;
 }
 
-
+/* --------------------- SECCION DE INTRODUCCION -------------------------*/
 #intro {
   display: flex;
   flex-direction: column;
@@ -56,10 +57,6 @@ body {
   height: 100%;
 }
 
-.intro-content-name {
-  color:#5633EE;
-  font-weight: bold;
-}
 
 .line-1{
   position: relative;  
@@ -73,7 +70,7 @@ body {
   transform: translateY(-50%);    
 }
 
-/* Animation */
+/* ---------------Animation ---------------------------*/
 .anim-typewriter{
 animation: typewriter 4s steps(44) 1s 1 normal both,
            blinkTextCursor 500ms steps(44) infinite normal;
@@ -97,7 +94,7 @@ to{border-right-color: transparent;}
 }
 
 .my-name {
-  color: #5633ee;
+  color: #155d44;
   font-weight: bold;
 }
 
@@ -128,6 +125,8 @@ ol > li {
   list-style: none;
 }
 
+
+/* ---------------------- SECCION DE CONTACTO ---------------------- */
 #skills {
   height: 400px;
   background-color: aquamarine;
@@ -141,6 +140,6 @@ footer {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: #7bb2f1; /* Optional: Set a background color */
+  background-color: #59bba2; /* Optional: Set a background color */
   z-index: -1; /* Optional: Send it to the background */
 }
