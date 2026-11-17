@@ -1,4 +1,4 @@
-import About from './components/About.jsx'
+﻿import About from './components/About.jsx'
 import Contact from './components/Contact.jsx'
 import Expertise from './components/Expertise.jsx'
 import Footer from './components/Footer.jsx'
@@ -10,7 +10,7 @@ export default function App() {
   return (
     <>
       <Navbar />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <Hero />
         <Projects />
         <About />

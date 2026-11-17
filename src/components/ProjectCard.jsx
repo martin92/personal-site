@@ -3,6 +3,7 @@ import { Database, FileCode2, MonitorCog } from 'lucide-react'
 
 const previewIcons = {
   'inventory-api-platform': Database,
+  'inventory-sales-analytics-platform': Database,
   'store-monitoring-dashboard': MonitorCog,
   'invoice-document-downloader': FileCode2,
 }
@@ -13,12 +14,13 @@ export default function ProjectCard({ project, featured = false }) {
   const imagePath = project.image
     ? project.image.startsWith('/') ? project.image : `/images/projects/${project.image}`
     : null
+  const projectNumber = String(project.index ?? 0).padStart(2, '0')
 
   return (
     <article className={`project-card${featured ? ' project-card-featured' : ''}`}>
-      <div className="project-preview" aria-label={`${project.title} preview`}>
+      <div className="project-preview">
         {imagePath && !imageFailed ? (
-          <img className="project-image" src={imagePath} alt={`${project.title} preview`} loading="lazy" onError={() => setImageFailed(true)} />
+          <img className="project-image" src={imagePath} alt={`Preview of ${project.title}`} loading="lazy" decoding="async" onError={() => setImageFailed(true)} />
         ) : (
           <div className="project-placeholder" aria-hidden="true">
             <PreviewIcon size={featured ? 42 : 32} strokeWidth={1.2} />
@@ -30,12 +32,12 @@ export default function ProjectCard({ project, featured = false }) {
       <div className="project-content">
         <div className="project-heading-row">
           <div>
-            <p className="project-index">{project.id === 'inventory-api-platform' ? '01' : project.id === 'store-monitoring-dashboard' ? '02' : '03'}</p>
+            <p className="project-index">{projectNumber}</p>
             <h3>{project.title}</h3>
           </div>
           <div className="project-links">
-            {project.githubUrl && <a href={project.githubUrl} target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>}
-            {project.demoUrl && <a href={project.demoUrl} target="_blank" rel="noreferrer">Live demo <span aria-hidden="true">↗</span></a>}
+            {project.githubUrl && <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" aria-label={`View ${project.title} on GitHub`}>GitHub <span aria-hidden="true">↗</span></a>}
+            {project.demoUrl && <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" aria-label={`View live demo of ${project.title}`}>Live demo <span aria-hidden="true">↗</span></a>}
           </div>
         </div>
         <p className="project-description">{project.description}</p>
