@@ -337,3 +337,217 @@ samp {
     transition-duration: 0.01ms !important;
   }
 }
+
+.projects-section {
+  border-top: 1px solid rgb(244 244 245 / 10%);
+  padding-block: clamp(5rem, 11vw, 9rem);
+}
+
+.projects-inner {
+  width: min(100% - 3rem, var(--content-width));
+  margin-inline: auto;
+}
+
+.projects-header {
+  max-width: 650px;
+  margin-bottom: 3.5rem;
+}
+
+.section-eyebrow,
+.project-index {
+  color: var(--color-accent);
+  font-family: 'Geist Mono Variable', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+}
+
+.section-eyebrow {
+  margin: 0 0 1.25rem;
+}
+
+.projects-header h2 {
+  margin: 0;
+  font-size: clamp(2.5rem, 6vw, 4.25rem);
+  font-weight: 500;
+  letter-spacing: -0.065em;
+  line-height: 1.05;
+}
+
+.projects-intro {
+  max-width: 500px;
+  margin: 1.25rem 0 0;
+  color: var(--color-secondary);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.project-card-featured {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  align-items: center;
+  gap: clamp(2rem, 6vw, 5rem);
+  padding-bottom: 3.5rem;
+}
+
+.project-preview {
+  position: relative;
+  display: grid;
+  min-height: 220px;
+  overflow: hidden;
+  place-items: center;
+  border: 1px solid rgb(244 244 245 / 9%);
+  background: var(--color-surface);
+}
+
+.project-card-featured .project-preview {
+  min-height: clamp(280px, 35vw, 410px);
+}
+
+.project-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 250ms ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.015);
+}
+
+.project-placeholder {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: rgb(169 196 245 / 60%);
+}
+
+.project-placeholder span {
+  color: rgb(244 244 245 / 34%);
+  font-family: 'Geist Mono Variable', monospace;
+  font-size: 0.68rem;
+}
+
+.featured-label {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  border: 1px solid rgb(244 244 245 / 15%);
+  padding: 0.45rem 0.6rem;
+  background: rgb(17 19 24 / 72%);
+  color: var(--color-primary);
+  font-family: 'Geist Mono Variable', monospace;
+  font-size: 0.65rem;
+}
+
+.project-content h3 {
+  margin: 0;
+  font-size: clamp(1.4rem, 2.7vw, 2rem);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+}
+
+.project-index {
+  margin: 0 0 0.75rem;
+  color: var(--color-secondary);
+}
+
+.project-description {
+  max-width: 500px;
+  margin: 1rem 0 0;
+  color: var(--color-secondary);
+  font-size: 0.94rem;
+  line-height: 1.75;
+}
+
+.project-heading-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  color: var(--color-accent);
+  font-size: 0.76rem;
+}
+
+.project-links a {
+  transition: color 180ms ease;
+}
+
+.project-links a:hover {
+  color: var(--color-primary);
+}
+
+.project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.1rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  color: var(--color-primary);
+  font-family: 'Geist Mono Variable', monospace;
+  font-size: 0.68rem;
+  list-style: none;
+}
+
+.project-technologies li {
+  color: var(--color-secondary);
+}
+
+.projects-list {
+  border-top: 1px solid rgb(244 244 245 / 12%);
+}
+
+.projects-list .project-card {
+  display: grid;
+  grid-template-columns: minmax(160px, 0.42fr) 1fr;
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  border-bottom: 1px solid rgb(244 244 245 / 12%);
+  padding-block: 2rem;
+}
+
+.projects-list .project-preview {
+  min-height: 160px;
+}
+
+@media (max-width: 700px) {
+  .projects-inner {
+    width: min(100% - 2.5rem, var(--content-width));
+  }
+
+  .project-card-featured {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .project-card-featured .project-preview {
+    min-height: min(72vw, 340px);
+  }
+
+  .projects-list .project-card {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .projects-list .project-preview {
+    min-height: min(52vw, 250px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-image {
+    transition: none;
+  }
+}
